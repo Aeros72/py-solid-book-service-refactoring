@@ -4,7 +4,10 @@ from app.printer import get_printer
 from app.serializers import get_serializer
 
 
-def main(book: Book, commands: list[tuple[str, str]]) -> None | str:
+def main(
+        book: Book,
+        commands: list[tuple[str, str]]
+) -> None | str:
     for cmd, method_type in commands:
         if cmd == "display":
             strategy = get_display(method_type)
